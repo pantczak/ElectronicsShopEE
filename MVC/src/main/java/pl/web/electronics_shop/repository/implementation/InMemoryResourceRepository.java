@@ -1,6 +1,5 @@
 package pl.web.electronics_shop.repository.implementation;
 
-import pl.web.electronics_shop.exception.ObjectAlreadyStoredException;
 import pl.web.electronics_shop.model.resoucre.Resource;
 import pl.web.electronics_shop.repository.ResourceRepository;
 
