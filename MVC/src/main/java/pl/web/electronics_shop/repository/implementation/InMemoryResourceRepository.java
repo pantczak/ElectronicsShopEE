@@ -4,12 +4,13 @@ import pl.web.electronics_shop.model.resoucre.Resource;
 import pl.web.electronics_shop.repository.ResourceRepository;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 @ApplicationScoped
-public class InMemoryResourceRepository implements ResourceRepository {
+public class InMemoryResourceRepository implements ResourceRepository, Serializable {
     private final List<Resource> resources;
 
     public InMemoryResourceRepository() {

@@ -4,12 +4,13 @@ import pl.web.electronics_shop.model.Event;
 import pl.web.electronics_shop.repository.EventRepository;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 @ApplicationScoped
-public class InMemoryEventRepository implements EventRepository {
+public class InMemoryEventRepository implements EventRepository, Serializable {
     private final List<Event> events;
 
     public InMemoryEventRepository() {
