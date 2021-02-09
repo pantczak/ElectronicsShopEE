@@ -44,8 +44,8 @@ public class ResourceService implements Serializable {
 
         if (!resourceRepository.get(resource.getUuid()).isAvailable()) return;
 
-        eventRepository.getAll().stream().filter(event -> event.getDevice().
-                equals(resourceRepository.get(resource.getUuid()))).forEach(event -> event.setDevice(null));
+        eventRepository.getAll().stream().filter(event -> event.getResource().
+                equals(resourceRepository.get(resource.getUuid()))).forEach(event -> event.setResource(null));
 
         resourceRepository.delete(resource);
     }
