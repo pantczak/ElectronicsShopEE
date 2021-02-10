@@ -1,47 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:b="http://bootsfaces.net/ui">
+<ui:composition template="template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:b="http://bootsfaces.net/ui">
 
-<h:head>
-    <title>Electronics Shop</title>
-    <meta name="author" content="pantczak"/>
-</h:head>
+    <ui:define name="view">
+        <b:container>
+            <b:jumbotron>
+                <h1>Electronics Shop MainPage</h1>
+            </b:jumbotron>
+        </b:container>
+    </ui:define>
 
-<h:body style="padding: 60px;">
-    <b:navBar brand="Electronics Shop" brandHref="#" position="top" fluid="true" inverse="false" style="">
-        <b:navbarLinks>
-            <b:dropMenu value="Users" iconAwesome="users">
-                <b:navLink value="Add User" outcome="adduser"/>
-                <b:navLink value="Manage Users" outcome="users"/>
-            </b:dropMenu>
-            <b:dropMenu value="Resources" iconAwesome="truck">
-                <b:navLink value="Add Resource" outcome="addresource"/>
-                <b:navLink value="Manage Resources" outcome="resources"/>
-            </b:dropMenu>
-            <b:dropMenu value="Events" iconAwesome="address-book">
-                <b:navLink value="Add Event" outcome="addevent"/>
-                <b:navLink value="Manage Events" outcome="events"/>
-            </b:dropMenu>
-        </b:navbarLinks>
-        <b:navbarLinks pull="right">
-            <b:dropMenu value="Login" iconAwesome="user">
-                <b:navLink value="Profile" outcome="info"/>
-                <b:navLink value="Log Out" outcome="main"/>
-            </b:dropMenu>
-        </b:navbarLinks>
-    </b:navBar>
-    <b:container>
-        <b:jumbotron>
-            <h1>BootsFaces Starter Template</h1>
-        </b:jumbotron>
 
-    </b:container>
-    <b:scrollUp distance="200" animation="fade" text="TOP" scrollTitle="true"/>
-</h:body>
-
-</html>
+</ui:composition>

@@ -17,7 +17,7 @@ import java.util.UUID;
 @Named
 @ViewScoped
 public class UsersController implements Serializable {
-    @Inject
+    @Inject @Getter
     private UserService userService;
 
     @Getter @Setter
@@ -38,12 +38,5 @@ public class UsersController implements Serializable {
         this.newClient = new Client();
         this.newEmployee = new Employee();
     }
-
-
-
-
-
-
-
 
 }

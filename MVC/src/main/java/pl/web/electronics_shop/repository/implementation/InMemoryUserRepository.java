@@ -19,7 +19,8 @@ public class InMemoryUserRepository implements UserRepository, Serializable {
 
     @Override
     public synchronized void add(User userToAdd) {
-        if (get(userToAdd.getUuid()) == null) {
+        if (getByLogin(userToAdd.getLogin()) == null) {
+            userToAdd.setUuid(UUID.randomUUID());
             users.add(userToAdd);
         }
     }
@@ -31,7 +32,7 @@ public class InMemoryUserRepository implements UserRepository, Serializable {
 
     @Override
     public User getByLogin(String login) {
-        return users.stream().filter(user -> user.getLogin().equals(user.getLogin())).findFirst().orElse(null);
+        return users.stream().filter(user -> user.getLogin().equals(login)).findFirst().orElse(null);
     }
 
     @Override
