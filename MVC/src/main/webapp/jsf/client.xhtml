@@ -1,0 +1,23 @@
+<ui:composition template="template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:b="http://bootsfaces.net/ui">
+
+    <b:form>
+        <b:dataTable value="#{usersController.currentClient}"/>
+        <b:inputText value="#{usersController.currentClient.name}" required="true" label="Name" colMd="10"
+                     labelColMd="2"/>
+        <b:inputText value="#{usersController.currentClient.lastName}" required="true" label="LastName" colMd="10"
+                     labelColMd="2"/>
+        <b:inputText value="#{usersController.currentClient.age}" id="client_age" label="Age" colMd="10"
+                     labelColMd="2">
+            <f:validateRequired for="client_age"/>
+            <f:validateLongRange for="client_age" minimum="1" maximum="150"/>
+        </b:inputText>
+
+    </b:form>
+
+
+</ui:composition>

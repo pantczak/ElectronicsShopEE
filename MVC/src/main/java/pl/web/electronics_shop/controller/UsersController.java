@@ -8,32 +8,43 @@ import pl.web.electronics_shop.model.user.Employee;
 import pl.web.electronics_shop.model.user.User;
 import pl.web.electronics_shop.service.UserService;
 
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
-import java.util.List;
 import java.util.UUID;
 
 @Named
 @ViewScoped
 public class UsersController implements Serializable {
-    @Inject @Getter
+    @Inject
+    @Getter
     private UserService userService;
 
-    @Getter @Setter
+    @Getter
+    @Setter
+    private Client currentClient;
+    @Getter
+    @Setter
     private User currentUser;
-    @Getter @Setter
+    @Getter
+    @Setter
     private Client newClient;
-    @Getter @Setter
+    @Getter
+    @Setter
     private Employee newEmployee;
-    @Getter @Setter
+    @Getter
+    @Setter
     private Admin newAdministrator;
-    @Getter @Setter
+    @Getter
+    @Setter
     private UUID userId;
-    @Getter @Setter
+    @Getter
+    @Setter
     private String login;
-    @Getter @Setter
+    @Getter
+    @Setter
     private String userTableType;
 
     public UsersController() {
@@ -43,4 +54,17 @@ public class UsersController implements Serializable {
     }
 
 
+    public String changeActiveStatus(User user) {
+        user.setActive(!user.isActive());
+        return FacesContext.getCurrentInstance().getViewRoot().getViewId() + "?faces-redirect=true";
+    }
+
+    public String editUser(User user){
+        if (user instanceof Client){
+            currentClient = (Client) user;
+            return "client";
+        }
+        currentUser = user;
+        return "user";
+    }
 }
