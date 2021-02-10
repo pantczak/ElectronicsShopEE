@@ -12,6 +12,7 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.List;
 import java.util.UUID;
 
 @Named
@@ -32,11 +33,14 @@ public class UsersController implements Serializable {
     private UUID userId;
     @Getter @Setter
     private String login;
+    @Getter @Setter
+    private String userTableType;
 
     public UsersController() {
         this.newAdministrator = new Admin();
         this.newClient = new Client();
         this.newEmployee = new Employee();
     }
+
 
 }

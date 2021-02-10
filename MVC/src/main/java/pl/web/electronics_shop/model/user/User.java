@@ -1,9 +1,6 @@
 package pl.web.electronics_shop.model.user;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import pl.web.electronics_shop.model.Entity;
 
 import javax.validation.constraints.NotNull;
@@ -23,6 +20,7 @@ public abstract class User extends Entity {
     @Size(min = 2, max = 40)
     private String lastName;
 
+    @Getter @Setter
     private boolean isActive = true;
 
     @NotNull

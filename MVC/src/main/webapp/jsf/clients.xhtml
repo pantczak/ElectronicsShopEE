@@ -1,0 +1,23 @@
+<ui:composition template="template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:b="http://bootsfaces.net/ui">
+
+
+    <ui:define name="view">
+        <h:form style="padding: 15px; margin-top: 60px ">
+            <b:dataTable value="#{usersController.userService.allClients}"
+                         var="amin">
+                <b:dataTableColumn value="#{amin.uuid}"/>
+                <b:dataTableColumn value="#{amin.name}"/>
+                <b:dataTableColumn value="#{amin.lastName}"/>
+                <b:dataTableColumn value="#{amin.login}"/>
+                <b:dataTableColumn value="#{amin.age}"/>
+                <b:dataTableColumn value="#{amin.active}"/>
+            </b:dataTable>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

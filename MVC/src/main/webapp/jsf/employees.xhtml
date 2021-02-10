@@ -7,15 +7,14 @@
 
 
     <ui:define name="view">
-
         <h:form style="padding: 15px; margin-top: 60px ">
-            <b:dataTable value="#{usersController.userService.allClients}"
-                         var="user">
-                <b:dataTableColumn value="#{user.uuid}" />
-                <b:dataTableColumn value="#{user.name}" />
-                <b:dataTableColumn value="#{user.lastName}" />
-                <b:dataTableColumn value="#{user.login}"  />
-                <b:dataTableColumn value="#{user.age}"/>
+            <b:dataTable value="#{usersController.userService.allEmployees}"
+                         var="amin">
+                <b:dataTableColumn value="#{amin.uuid}"/>
+                <b:dataTableColumn value="#{amin.name}"/>
+                <b:dataTableColumn value="#{amin.lastName}"/>
+                <b:dataTableColumn value="#{amin.login}"/>
+                <b:dataTableColumn value="#{amin.active}"/>
             </b:dataTable>
         </h:form>
     </ui:define>

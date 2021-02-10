@@ -13,36 +13,38 @@
 </h:head>
 
 <h:body>
-    <div class="menu">
-        <b:navBar brand="Electronics Shop" brandHref="#" position="top" fluid="true" inverse="false" style="">
-            <b:navbarLinks>
-                <b:dropMenu value="Users" iconAwesome="users">
-                    <b:navLink value="Add User" outcome="adduser"/>
-                    <b:navLink value="Manage Users" outcome="users"/>
-                </b:dropMenu>
-                <b:dropMenu value="Resources" iconAwesome="truck">
-                    <b:navLink value="Add Resource" outcome="addresource"/>
-                    <b:navLink value="Manage Resources" outcome="resources"/>
-                </b:dropMenu>
-                <b:dropMenu value="Events" iconAwesome="address-book">
-                    <b:navLink value="Add Event" outcome="addevent"/>
-                    <b:navLink value="Manage Events" outcome="events"/>
-                </b:dropMenu>
-            </b:navbarLinks>
-            <b:navbarLinks pull="right">
-                <b:dropMenu value="Login" iconAwesome="user">
-                    <b:navLink value="Profile" outcome="info"/>
-                    <b:navLink value="Log Out" outcome="main"/>
-                </b:dropMenu>
-            </b:navbarLinks>
-        </b:navBar>
-    </div>
 
-    <div class="view">
-        <ui:insert name="view" />
-    </div>
+    <b:navBar brand="Electronics Shop" position="top" fluid="true" inverse="false">
+        <b:navbarLinks>
+            <b:dropMenu value="Users" iconAwesome="users">
+                <b:navLink value="Add User" outcome="adduser"/>
+                <b:dropMenu value="Manage Users">
+                    <b:navLink value="Clients" outcome="clients"/>
+                    <b:navLink value="Employees" outcome="employees"/>
+                    <b:navLink value="Admininstrators" outcome="admins"/>
+                </b:dropMenu>
+            </b:dropMenu>
+            <b:dropMenu value="Resources" iconAwesome="truck">
+                <b:navLink value="Add Resource" outcome="addresource"/>
+                <b:navLink value="Manage Resources" outcome="resources"/>
+            </b:dropMenu>
+            <b:dropMenu value="Events" iconAwesome="address-book">
+                <b:navLink value="Add Event" outcome="addevent"/>
+                <b:navLink value="Manage Events" outcome="events"/>
+            </b:dropMenu>
+        </b:navbarLinks>
+        <b:navbarLinks pull="right">
+            <b:dropMenu value="Login" iconAwesome="user">
+                <b:navLink value="Profile" outcome="info"/>
+                <b:navLink value="Log Out" outcome="main"/>
+            </b:dropMenu>
+        </b:navbarLinks>
+    </b:navBar>
 
-<!--    TODO remove footer or make it work correctly-->
+    <ui:insert name="view"/>
+
+
+    <!--    TODO remove footer or make it work correctly-->
     <div class="footer">
     </div>
 </h:body>
