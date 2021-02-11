@@ -17,15 +17,21 @@
             <b:inputText value="#{usersController.currentClient.age}" required="true" label="Age" colMd="10"
                          labelColMd="2">
             </b:inputText>
-            <b:inputText value="#{usersController.currentClient.password}" required="true"  label="Password" colMd="10"
+            <b:inputText value="#{usersController.currentClient.password}" required="true" label="Password" colMd="10"
                          labelColMd="2">
             </b:inputText>
             <b:inputText
                     value="#{usersController.currentClient.login}" required="true" label="Login"
                     colMd="10"
                     labelColMd="2"/>
-            <b:commandButton look="success"  value="Update client" action="#{usersController.processUpdatedUser()}" />
+            <b:commandButton look="success" value="Update client" action="#{usersController.processUpdatedUser()}"/>
         </b:form>
+
+<!-- TODO ADD USER EVENTS TABLE-->
+<!--        <b:dataTable value="#{eventController.eventManager.getEventsForClient(userController.currentClient.uuid)}"-->
+<!--                     var="event">-->
+
+<!--        </b:dataTable>-->
     </ui:define>
 
 
