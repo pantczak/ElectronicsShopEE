@@ -8,20 +8,20 @@
 
     <ui:define name="view">
         <h:form style="padding: 15px; margin-top: 60px ">
-            <b:dataTable value="#{resourceController.currentLaptops}"
-                         var="laptop">
-                <b:dataTableColumn value="#{laptop.uuid}"/>
-                <b:dataTableColumn value="#{laptop.brand}"/>
-                <b:dataTableColumn value="#{laptop.model}"/>
-                <b:dataTableColumn value="#{laptop.available}"/>
-                <b:dataTableColumn value="#{laptop.weightInGrams}"/>
-                <b:dataTableColumn value="#{laptop.memoryInGb}"/>
+            <b:dataTable value="#{resourceController.currentSmartphones}"
+                         var="smartphone">
+                <b:dataTableColumn value="#{smartphone.uuid}"/>
+                <b:dataTableColumn value="#{smartphone.brand}"/>
+                <b:dataTableColumn value="#{smartphone.model}"/>
+                <b:dataTableColumn value="#{smartphone.available}"/>
+                <b:dataTableColumn value="#{smartphone.weightInGrams}"/>
+                <b:dataTableColumn value="#{smartphone.batteryLifetime}"/>
                 <b:dataTableColumn label="Edit resource">
-                    <b:commandButton value="Edit" look="info" action="#{resourceController.editResource(laptop)}"/>
+                    <b:commandButton value="Edit" look="info" action="#{resourceController.editResource(smartphone)}"/>
                 </b:dataTableColumn>
                 <b:dataTableColumn label="Delete resource">
                     <b:commandButton value="Delete" look="danger"
-                                     action="#{resourceController.deleteResource(laptop)}"/>
+                                     action="#{resourceController.deleteResource(smartphone)}"/>
                 </b:dataTableColumn>
             </b:dataTable>
             <b:commandButton value="Reload List" look="warning" action="#{resourceController.initList}"/>

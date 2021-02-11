@@ -7,10 +7,13 @@ import pl.web.electronics_shop.model.resoucre.Resource;
 import pl.web.electronics_shop.model.resoucre.Smartphone;
 import pl.web.electronics_shop.service.ResourceService;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.List;
 
 @Named
 @SessionScoped
@@ -31,10 +34,23 @@ public class ResourceController implements Serializable {
     @Getter
     @Setter
     private Smartphone currentSmartphone;
+    @Getter
+    @Setter
+    private List<Laptop> currentLaptops;
+    @Getter
+    @Setter
+    private List<Smartphone> currentSmartphones;
 
     public ResourceController() {
         newLaptop = new Laptop();
         newSmartphone = new Smartphone();
+    }
+
+    @PostConstruct
+    public void initList() {
+        currentLaptops = resourceService.getAllLaptops();
+        currentSmartphones = resourceService.getAllSmartphones();
+
     }
 
     public String editResource(Resource resource) {
@@ -46,7 +62,9 @@ public class ResourceController implements Serializable {
         return "smartphone";
     }
 
-    public void deleteResource(Resource resource) {
+    public String deleteResource(Resource resource) {
         resourceService.deleteResource(resource);
+        initList();
+        return FacesContext.getCurrentInstance().getViewRoot().getViewId() + "?faces-redirect=true";
     }
 }
