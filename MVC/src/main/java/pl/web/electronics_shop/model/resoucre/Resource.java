@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import pl.web.electronics_shop.model.Entity;
 
 import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -25,6 +26,6 @@ public abstract class Resource extends Entity {
     @AssertTrue
     private boolean isAvailable;
     @NotNull
-    @Size(min = 1)
+    @Min(1)
     private int weightInGrams;
 }

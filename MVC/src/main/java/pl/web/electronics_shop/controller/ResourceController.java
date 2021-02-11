@@ -67,4 +67,8 @@ public class ResourceController implements Serializable {
         initList();
         return FacesContext.getCurrentInstance().getViewRoot().getViewId() + "?faces-redirect=true";
     }
+
+    public String processUpdatedResource() {
+        return "main";
+    }
 }
