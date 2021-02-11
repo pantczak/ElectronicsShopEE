@@ -71,4 +71,14 @@ public class ResourceController implements Serializable {
     public String processUpdatedResource() {
         return "main";
     }
+
+    public String processNewLaptop() {
+        resourceService.addResource(newLaptop);
+        return "laptops";
+    }
+
+    public String processNewSmartphone() {
+        resourceService.addResource(newSmartphone);
+        return "smartphones";
+    }
 }

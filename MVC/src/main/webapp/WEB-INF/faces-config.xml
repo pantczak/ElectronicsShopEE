@@ -7,6 +7,16 @@
     <navigation-rule>
         <from-view-id/>
         <navigation-case>
+            <from-outcome>addlaptop</from-outcome>
+            <to-view-id>/jsf/addlaptop.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>addsmartphone</from-outcome>
+            <to-view-id>/jsf/addsmartphone.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>smartphone</from-outcome>
             <to-view-id>/jsf/smartphone.xhtml</to-view-id>
             <redirect/>

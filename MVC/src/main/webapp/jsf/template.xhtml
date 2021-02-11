@@ -29,7 +29,10 @@
                 </b:dropMenu>
             </b:dropMenu>
             <b:dropMenu value="Resources" iconAwesome="truck">
-                <b:navLink value="Add Resource" outcome="resources"/>
+                <b:dropMenu value="Add Resource">
+                    <b:navLink value="Add Laptop" outcome="addlaptop"/>
+                    <b:navLink value="Add Smartphone" outcome="addsmartphone"/>
+                </b:dropMenu>
                 <b:dropMenu value="Manage Resources">
                     <b:navLink value="Laptops" outcome="laptops"/>
                     <b:navLink value="Smartphones" outcome="smartphones"/>

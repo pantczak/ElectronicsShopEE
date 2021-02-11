@@ -1,0 +1,27 @@
+<ui:composition template="template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:b="http://bootsfaces.net/ui">
+
+
+    <ui:define name="view">
+        <b:form style="margin-top: 80px; padding: 20px">
+            <b:inputText value="#{resourceController.newLaptop.brand}" required="true" label="Brand" colMd="10"
+                         labelColMd="2"/>
+            <b:inputText value="#{resourceController.newLaptop.model}" required="true" label="Model"
+                         colMd="10"
+                         labelColMd="2"/>
+            <b:inputText value="#{resourceController.newLaptop.weightInGrams}" required="true" label="Weight (grams)" colMd="10"
+                         labelColMd="2">
+            </b:inputText>
+            <b:inputText value="#{resourceController.newLaptop.memoryInGb}" required="true"  label="Memory (GiB)" colMd="10"
+                         labelColMd="2">
+            </b:inputText>
+            <b:commandButton look="success"  value="Add Laptop" action="#{resourceController.processNewLaptop()}" />
+        </b:form>
+    </ui:define>
+
+
+</ui:composition>
