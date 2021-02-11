@@ -8,23 +8,22 @@
 
     <ui:define name="view">
         <b:form style="margin-top: 80px; padding: 20px">
-            <b:inputText value="#{usersController.currentClient.name}" required="true" label="Name" colMd="10"
+            <b:inputText value="#{usersController.newClient.name}" required="true" label="Name" colMd="10"
                          labelColMd="2"/>
-            <b:inputText placeholder="#{usersController.currentClient.lastName}"
-                         value="#{usersController.currentClient.lastName}" required="true" label="LastName"
+            <b:inputText value="#{usersController.newClient.lastName}" required="true" label="LastName"
                          colMd="10"
                          labelColMd="2"/>
-            <b:inputText value="#{usersController.currentClient.age}" required="true" label="Age" colMd="10"
+            <b:inputText value="#{usersController.newClient.age}" required="true" label="Age" colMd="10"
                          labelColMd="2">
             </b:inputText>
-            <b:inputText value="#{usersController.currentClient.password}" required="true"  label="Password" colMd="10"
+            <b:inputText value="#{usersController.newClient.password}" required="true"  label="Password" colMd="10"
                          labelColMd="2">
             </b:inputText>
             <b:inputText
-                    value="#{usersController.currentClient.login}" required="true" label="Login"
+                    value="#{usersController.newClient.login}" required="true" label="Login"
                     colMd="10"
                     labelColMd="2"/>
-            <b:commandButton look="success"  value="Update client" action="#{usersController.processUpdatedUser()}" />
+            <b:commandButton look="success"  value="Add client" action="#{usersController.processNewClient()}" />
         </b:form>
     </ui:define>
 

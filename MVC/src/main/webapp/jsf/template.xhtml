@@ -17,7 +17,11 @@
     <b:navBar brand="Electronics Shop" position="top" fluid="true" inverse="false">
         <b:navbarLinks>
             <b:dropMenu value="Users" iconAwesome="users">
-                <b:navLink value="Add User" outcome="adduser"/>
+                <b:dropMenu value="Add User">
+                    <b:navLink value="Add Client" outcome="addclient"/>
+                    <b:navLink value="Add Employee" outcome="addemployee"/>
+                    <b:navLink value="Add Admininstrator" outcome="addadmin"/>
+                </b:dropMenu>
                 <b:dropMenu value="Manage Users">
                     <b:navLink value="Clients" outcome="clients"/>
                     <b:navLink value="Employees" outcome="employees"/>

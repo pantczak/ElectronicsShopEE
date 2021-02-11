@@ -8,15 +8,15 @@ import pl.web.electronics_shop.model.user.Employee;
 import pl.web.electronics_shop.model.user.User;
 import pl.web.electronics_shop.service.UserService;
 
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.UUID;
 
 @Named
-@ViewScoped
+@SessionScoped
 public class UsersController implements Serializable {
     @Inject
     @Getter
@@ -53,18 +53,37 @@ public class UsersController implements Serializable {
         this.newEmployee = new Employee();
     }
 
-
     public String changeActiveStatus(User user) {
         user.setActive(!user.isActive());
         return FacesContext.getCurrentInstance().getViewRoot().getViewId() + "?faces-redirect=true";
     }
 
-    public String editUser(User user){
-        if (user instanceof Client){
+    public String editUser(User user) {
+        if (user instanceof Client) {
             currentClient = (Client) user;
             return "client";
         }
         currentUser = user;
         return "user";
+    }
+
+    public String processUpdatedUser() {
+        return "main";
+    }
+
+
+    public String processNewClient() {
+        userService.addUser(newClient);
+        return "clients";
+    }
+
+    public String processNewEmployee() {
+        userService.addUser(newEmployee);
+        return "employees";
+    }
+
+    public String processNewAdmin() {
+        userService.addUser(newAdministrator);
+        return "admins";
     }
 }

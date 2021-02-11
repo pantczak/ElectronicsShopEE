@@ -14,12 +14,13 @@
                 <b:dataTableColumn value="#{user.name}"/>
                 <b:dataTableColumn value="#{user.lastName}"/>
                 <b:dataTableColumn value="#{user.login}"/>
+                <b:dataTableColumn value="#{user.password}"/>
                 <b:dataTableColumn value="#{user.age}"/>
                 <b:dataTableColumn value="#{user.active}"/>
-                <b:dataTableColumn>
+                <b:dataTableColumn label="Change User status">
                     <b:commandButton value="Change active status" look="warning" action="#{usersController.changeActiveStatus(user)}"/>
                 </b:dataTableColumn>
-                <b:dataTableColumn>
+                <b:dataTableColumn label="Edit User" >
                     <b:commandButton value="Edit" look="info" action="#{usersController.editUser(user)}"/>
                 </b:dataTableColumn>
             </b:dataTable>

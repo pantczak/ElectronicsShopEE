@@ -1,0 +1,29 @@
+<ui:composition template="template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:b="http://bootsfaces.net/ui">
+
+
+    <ui:define name="view">
+        <b:form style="margin-top: 80px; padding: 20px">
+            <b:inputText value="#{usersController.newAdministrator.name}" required="true" label="Name" colMd="10"
+                         labelColMd="2"/>
+            <b:inputText value="#{usersController.newAdministrator.lastName}" required="true" label="LastName"
+                         colMd="10"
+                         labelColMd="2"/>
+
+            <b:inputText value="#{usersController.newAdministrator.password}" required="true" label="Password" colMd="10"
+                         labelColMd="2">
+            </b:inputText>
+            <b:inputText
+                    value="#{usersController.newAdministrator.login}" required="true" label="Login"
+                    colMd="10"
+                    labelColMd="2"/>
+            <b:commandButton look="success" value="Add administrator" action="#{usersController.processNewAdmin()}"/>
+        </b:form>
+    </ui:define>
+
+
+</ui:composition>
