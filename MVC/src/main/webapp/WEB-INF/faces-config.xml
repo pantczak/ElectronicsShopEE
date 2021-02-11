@@ -7,6 +7,11 @@
     <navigation-rule>
         <from-view-id/>
         <navigation-case>
+            <from-outcome>laptops</from-outcome>
+            <to-view-id>/jsf/laptops.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>addclient</from-outcome>
             <to-view-id>/jsf/addclient.xhtml</to-view-id>
             <redirect/>

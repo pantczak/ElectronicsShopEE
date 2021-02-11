@@ -1,16 +1,23 @@
 package pl.web.electronics_shop.service;
 
 import lombok.NoArgsConstructor;
+import pl.web.electronics_shop.model.resoucre.Laptop;
 import pl.web.electronics_shop.model.resoucre.Resource;
+import pl.web.electronics_shop.model.resoucre.Smartphone;
+import pl.web.electronics_shop.model.user.Admin;
+import pl.web.electronics_shop.model.user.Employee;
 import pl.web.electronics_shop.repository.EventRepository;
 import pl.web.electronics_shop.repository.ResourceRepository;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
+@Named
 @RequestScoped
 @NoArgsConstructor
 public class ResourceService implements Serializable {
@@ -24,6 +31,17 @@ public class ResourceService implements Serializable {
     public List<Resource> getAllResources() {
         return resourceRepository.getAll();
     }
+
+    public List<Laptop> getAllLaptops() {
+        return resourceRepository.getAll().stream().filter(laptop -> laptop instanceof Laptop).
+                map(laptop -> (Laptop) laptop).collect(Collectors.toList());
+    }
+
+    public List<Smartphone> getAllSmartphones() {
+        return resourceRepository.getAll().stream().filter(smartphone -> smartphone instanceof Smartphone).
+                map(smartphone -> (Smartphone) smartphone).collect(Collectors.toList());
+    }
+
 
     public void addResource(Resource resource) {
         if (resource != null) {

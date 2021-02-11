@@ -19,9 +19,10 @@ public class InMemoryResourceRepository implements ResourceRepository, Serializa
 
     @Override
     public synchronized void add(Resource resource) {
-        if (get(resource.getUuid()) == null) {
-            resources.add(resource);
-        }
+        if (resources.contains(resource)) return;
+
+        resource.setUuid(UUID.randomUUID());
+        resources.add(resource);
     }
 
     @Override

@@ -32,20 +32,20 @@ public class InitRepositories implements Serializable {
     }
 
     private void initRepo() {
-//        Resource smartphone1 = new Smartphone("Samsung", "S10", true, 450, 8.5);
-//        Resource smartphone2 = new Smartphone("Apple", "Iphone X", true, 411, 9.5);
-//        Resource smartphone3 = new Smartphone("Sony", "Lumia", true, 250, 5.5);
-//        Resource smartphone4 = new Smartphone("Apple", "Iphone 12", true, 405, 11.5);
-//        Resource smartphone5 = new Smartphone("Xiaomi", "Mi 10", true, 470, 14.5);
-//        Resource laptop1 = new Laptop("Lenovo", "Thinkpad X230", true, 3570, 8);
-//        Resource laptop2 = new Laptop("HP", "Probook 15", true, 3270, 12);
-//        Resource laptop3 = new Laptop("Apple", "Macbook Pro 15", true, 2900, 16);
-//        Resource laptop4 = new Laptop("Dell", "Lattitude 13", true, 2270, 4);
-//
-//        for (Resource resource : Arrays.asList(smartphone1, smartphone2, smartphone3, smartphone4,
-//                smartphone5, laptop1, laptop2, laptop3, laptop4)) {
-//            resourceRepository.add(resource);
-//        }
+        Resource smartphone1 = new Smartphone("Samsung", "S10", true, 450, 8.5);
+        Resource smartphone2 = new Smartphone("Apple", "Iphone X", true, 411, 9.5);
+        Resource smartphone3 = new Smartphone("Sony", "Lumia", true, 250, 5.5);
+        Resource smartphone4 = new Smartphone("Apple", "Iphone 12", true, 405, 11.5);
+        Resource smartphone5 = new Smartphone("Xiaomi", "Mi 10", true, 470, 14.5);
+        Resource laptop1 = new Laptop("Lenovo", "Thinkpad X230", true, 3570, 8);
+        Resource laptop2 = new Laptop("HP", "Probook 15", true, 3270, 12);
+        Resource laptop3 = new Laptop("Apple", "Macbook Pro 15", true, 2900, 16);
+        Resource laptop4 = new Laptop("Dell", "Lattitude 13", true, 2270, 4);
+
+        for (Resource resource : Arrays.asList(smartphone1, smartphone2, smartphone3, smartphone4,
+                smartphone5, laptop1, laptop2, laptop3, laptop4)) {
+            resourceRepository.add(resource);
+        }
 
         User user1 = new Admin("Adam", "Nowak", true, "ANowak", "asdsa");
         User user2 = new Employee("Ewa", "Nowak", true, "ENowak", "asasddsa");

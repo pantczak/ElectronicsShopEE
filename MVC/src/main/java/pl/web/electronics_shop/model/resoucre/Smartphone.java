@@ -4,15 +4,17 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 public class Smartphone extends Resource {
     @NotNull
-    @Size(min = 1, max = 36)
+    @Min(1)
+    @Max(36)
     private double batteryLifetime;
 
     public Smartphone(String brand, String model, boolean isAvailable, int weightInGrams, double batteryLifetime) {
