@@ -27,11 +27,16 @@
             <b:commandButton look="success" value="Update client" action="#{usersController.processUpdatedUser()}"/>
         </b:form>
 
-<!-- TODO ADD USER EVENTS TABLE-->
-<!--        <b:dataTable value="#{eventController.eventManager.getEventsForClient(userController.currentClient.uuid)}"-->
-<!--                     var="event">-->
-
-<!--        </b:dataTable>-->
+<!--        <b:form style="margin-top: 500px; padding: 20px">-->
+<!--            <b:dataTable-->
+<!--                    value="#{eventController.eventService.getEventsForClient(usersController.currentClient.uuid)}"-->
+<!--                    var="event">-->
+<!--                <b:dataTableColumn value="#{event.uuid}" label="Event UUID"/>-->
+<!--                <b:dataTableColumn value="#{event.resource.uuid}" label="Resource UUID"/>-->
+<!--                <b:dataTableColumn value="#{event.borrowDate}"/>-->
+<!--                <b:dataTableColumn value="#{event.returnDate}"/>-->
+<!--            </b:dataTable>-->
+<!--        </b:form>-->
     </ui:define>
 
 

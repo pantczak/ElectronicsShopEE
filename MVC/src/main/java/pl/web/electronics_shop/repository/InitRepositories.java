@@ -8,6 +8,7 @@ import pl.web.electronics_shop.model.user.Admin;
 import pl.web.electronics_shop.model.user.Client;
 import pl.web.electronics_shop.model.user.Employee;
 import pl.web.electronics_shop.model.user.User;
+import pl.web.electronics_shop.service.EventService;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.Initialized;
@@ -26,6 +27,17 @@ public class InitRepositories implements Serializable {
     private ResourceRepository resourceRepository;
     @Inject
     private UserRepository userRepository;
+    @Inject
+    private EventRepository eventRepository;
+    @Inject
+    private EventService eventService;
+
+    public InitRepositories(ResourceRepository resourceRepository, UserRepository userRepository, EventRepository eventRepository) {
+        this.resourceRepository = resourceRepository;
+        this.userRepository = userRepository;
+        this.eventRepository = eventRepository;
+        this.eventService = new EventService(eventRepository, userRepository, resourceRepository);
+    }
 
     public void initRepo(@Observes @Initialized(ApplicationScoped.class) Object init) {
         initRepo();
@@ -50,7 +62,7 @@ public class InitRepositories implements Serializable {
         User user1 = new Admin("Adam", "Nowak", true, "ANowak", "asdsa");
         User user2 = new Employee("Ewa", "Nowak", true, "ENowak", "asasddsa");
         User user3 = new Client("Jan", "Kowalski", true, "JKowalski", "password", 44);
-        User user4 = new Client("Ada", "Nowak", true, "ANowak", "password1", 18);
+        User user4 = new Client("Ada", "Nowak", true, "adunia1", "password1", 18);
         User user5 = new Client("Tomasz", "Tomczak", true, "tomtom", "tomtom123", 18);
         user5.setActive(false);
 
@@ -58,5 +70,11 @@ public class InitRepositories implements Serializable {
                 user3, user4, user5)) {
             userRepository.add(user);
         }
+
+        eventService.borrowResource(smartphone1.getUuid(), user3.getUuid());
+        eventService.borrowResource(smartphone2.getUuid(), user3.getUuid());
+        eventService.borrowResource(laptop1.getUuid(), user4.getUuid());
+        eventService.borrowResource(smartphone3.getUuid(), user3.getUuid());
+        eventService.borrowResource(smartphone4.getUuid(), user4.getUuid());
     }
 }

@@ -1,5 +1,6 @@
 package pl.web.electronics_shop.service;
 
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import pl.web.electronics_shop.model.Event;
 import pl.web.electronics_shop.model.resoucre.Resource;
@@ -9,16 +10,19 @@ import pl.web.electronics_shop.repository.EventRepository;
 import pl.web.electronics_shop.repository.ResourceRepository;
 import pl.web.electronics_shop.repository.UserRepository;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-@RequestScoped
+@Named
+@ApplicationScoped
 @NoArgsConstructor
+@AllArgsConstructor
 public class EventService implements Serializable {
 
     @Inject
@@ -40,7 +44,7 @@ public class EventService implements Serializable {
 
         if (resource == null || user == null) return;
 
-        if (!(resource.isAvailable() && user instanceof Client && user.isActive())) return;
+        if (!resource.isAvailable() || !(user instanceof Client) || !user.isActive()) return;
 
         eventRepository.add(new Event(resource, (Client) user, date));
         resource.setAvailable(false);
@@ -57,7 +61,7 @@ public class EventService implements Serializable {
     }
 
     public void deleteEvent(Event event) {
-        if (event == null || event.getReturnDate() != null || eventRepository.get(event.getUuid()) == null) return;
+        if (event == null || event.getReturnDate() == null || eventRepository.get(event.getUuid()) == null) return;
 
         eventRepository.delete(event);
     }

@@ -9,7 +9,7 @@ import pl.web.electronics_shop.model.user.Employee;
 import pl.web.electronics_shop.repository.EventRepository;
 import pl.web.electronics_shop.repository.ResourceRepository;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -18,7 +18,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Named
-@RequestScoped
+@ApplicationScoped
 @NoArgsConstructor
 public class ResourceService implements Serializable {
 

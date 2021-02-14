@@ -9,6 +9,7 @@ import pl.web.electronics_shop.service.UserService;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -58,6 +59,25 @@ public class EventController implements Serializable {
         currentEvents = eventService.getAllEvents();
     }
 
+    public EventController() {
+        this.borrowDate = new Date();
+    }
 
+    public String returnResource(Event event) {
+        eventService.returnResource(event);
+        return FacesContext.getCurrentInstance().getViewRoot().getViewId() + "?faces-redirect=true";
+    }
+
+    public String deleteEvent(Event event) {
+        eventService.deleteEvent(event);
+        initList();
+        return FacesContext.getCurrentInstance().getViewRoot().getViewId() + "?faces-redirect=true";
+
+    }
+
+    public String processNewEvent() {
+        eventService.borrowResource(newEventDeviceUuid, newEventClientUuid);
+        return "events";
+    }
 
 }

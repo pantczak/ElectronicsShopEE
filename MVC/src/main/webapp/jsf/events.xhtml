@@ -1,0 +1,33 @@
+<ui:composition template="template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:b="http://bootsfaces.net/ui">
+
+
+    <ui:define name="view">
+        <h:form style="padding: 15px; margin-top: 60px ">
+            <b:dataTable value="#{eventController.currentEvents}"
+                         var="event">
+                <b:dataTableColumn value="#{event.uuid}" label="Event UUID"/>
+                <b:dataTableColumn value="#{event.client.uuid}" label="Client UUID"/>
+                <b:dataTableColumn value="#{event.client.login}" label="Client login"/>
+                <b:dataTableColumn value="#{event.resource.uuid}" label="Resource UUID"/>
+                <b:dataTableColumn value="#{event.borrowDate}"/>
+                <b:dataTableColumn value="#{event.returnDate}"/>
+                <b:dataTableColumn label="End event">
+                    <b:commandButton value="End" look="warning"
+                                     action="#{eventController.returnResource(event)}"/>
+                </b:dataTableColumn>
+                <b:dataTableColumn label="Delete event">
+                    <b:commandButton value="Delete" look="danger"
+                                     action="#{eventController.deleteEvent(event)}"/>
+                </b:dataTableColumn>
+            </b:dataTable>
+            <b:commandButton value="Reload List" look="warning" action="#{eventController.initList}"/>
+        </h:form>
+
+    </ui:define>
+
+</ui:composition>

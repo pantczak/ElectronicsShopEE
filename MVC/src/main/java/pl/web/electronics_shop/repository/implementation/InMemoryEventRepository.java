@@ -19,9 +19,8 @@ public class InMemoryEventRepository implements EventRepository, Serializable {
 
     @Override
     public synchronized void add(Event event) {
-        if (get(event.getUuid()) == null) {
-            events.add(event);
-        }
+        event.setUuid(UUID.randomUUID());
+        events.add(event);
     }
 
     @Override

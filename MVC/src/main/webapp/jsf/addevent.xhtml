@@ -1,0 +1,26 @@
+<ui:composition template="template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:b="http://bootsfaces.net/ui">
+
+
+    <ui:define name="view">
+        <b:form style="margin-top: 80px; padding: 20px">
+            <b:inputText value="#{eventController.newEventClientUuid}" converter="UUIDConverter" required="true" label="Client UUID" colMd="10"
+                         labelColMd="2"/>
+            <b:inputText value="#{eventController.newEventDeviceUuid}" converter="UUIDConverter" required="true" label="Resource UUID"
+                         colMd="10"
+                         labelColMd="2"/>
+
+            <b:inputText value="#{eventController.borrowDate}" required="true" label="Borrow date" colMd="10"
+                         labelColMd="2">
+                <f:convertDateTime pattern="yyyy-MM-dd"/>
+            </b:inputText>
+            <b:commandButton look="success" value="Add event" action="#{eventController.processNewEvent()}"/>
+        </b:form>
+    </ui:define>
+
+
+</ui:composition>
