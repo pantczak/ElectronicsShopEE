@@ -1,6 +1,7 @@
 package pl.web.electronics_shop.service;
 
 import lombok.NoArgsConstructor;
+import pl.web.electronics_shop.model.Event;
 import pl.web.electronics_shop.model.resoucre.Laptop;
 import pl.web.electronics_shop.model.resoucre.Resource;
 import pl.web.electronics_shop.model.resoucre.Smartphone;
@@ -40,6 +41,11 @@ public class ResourceService implements Serializable {
     public List<Smartphone> getAllSmartphones() {
         return resourceRepository.getAll().stream().filter(smartphone -> smartphone instanceof Smartphone).
                 map(smartphone -> (Smartphone) smartphone).collect(Collectors.toList());
+    }
+
+    public List<Resource> getAllAvailableResources() {
+        List<Event> events = eventRepository.getAll();
+        return getAllResources().stream().filter(Resource::isAvailable).collect(Collectors.toList());
     }
 
 

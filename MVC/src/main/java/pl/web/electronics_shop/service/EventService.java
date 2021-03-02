@@ -34,6 +34,10 @@ public class EventService implements Serializable {
     @Inject
     ResourceRepository resourceRepository;
 
+    public void borrowResourceByLogin(UUID resourceUUID, String userLogin) {
+        borrowResource(resourceUUID, userRepository.getByLogin(userLogin).getUuid(), new Date());
+    }
+
     public void borrowResource(UUID resourceUuid, UUID userUuid) {
         borrowResource(resourceUuid, userUuid, new Date());
     }
@@ -75,7 +79,7 @@ public class EventService implements Serializable {
     }
 
     //TODO think about moving to EventRepository
-    public List<Event> getEventsForClient(Client client) {
+    public List<Event> getEventsForClient(User client) {
         return getAllEvents().stream().filter(event -> event.getClient().equals(client)).
                 collect(Collectors.toList());
     }
