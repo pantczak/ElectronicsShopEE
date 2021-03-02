@@ -1,0 +1,38 @@
+<ui:composition template="template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:b="http://bootsfaces.net/ui">
+
+
+    <ui:define name="view">
+        <b:form style="margin-top: 80px; padding: 20px">
+
+            <b:dataTable>
+                <b:dataTableColumn value="#{userDetailsController.login}"/>
+                <b:dataTableColumn value="#{userDetailsController.userForDetails.name}"/>
+                <b:dataTableColumn value="#{userDetailsController.userForDetails.lastName}"/>
+                <b:dataTableColumn value="#{userDetailsController.userForDetails.active}"/>
+            </b:dataTable>
+
+            <b:dataTable value="#{userDetailsController.userBorrows}" var="borrow">
+                <b:dataTableColumn value="#{borrow.uuid}"/>
+                <b:dataTableColumn value="#{borrow.borrowDate}"/>
+                <b:dataTableColumn value="#{borrow.returnDate}"/>
+                <b:dataTableColumn value="#{borrow.resource.brand}"/>
+                <b:dataTableColumn value="#{borrow.resource.model}"/>
+                <b:dataTableColumn label="End Borrow"
+                        rendered="#{userDetailsController.login == facesContext.externalContext.userPrincipal.name}">
+                    <b:commandButton value="End Borrow"
+                                     actionListener="#{userDetailsController.endBorrow(borrow)}"/>
+                </b:dataTableColumn>
+
+            </b:dataTable>
+            <b:commandButton value="Logout" look="danger" action="#{logOutController.logout()}"/>
+        </b:form>
+
+    </ui:define>
+
+
+</ui:composition>

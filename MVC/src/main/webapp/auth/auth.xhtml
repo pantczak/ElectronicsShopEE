@@ -1,12 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-    <title>Title</title>
-</head>
-<body>
+<ui:composition template="../jsf/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:b="http://bootsfaces.net/ui">
 
-</body>
-</html>
+
+    <ui:define name="view">
+        <b:form style="margin-top: 80px; padding: 20px">
+            <b:inputText label="Login" id="j_username" autocomplete="off" value="#{logInController.username}"/>
+            <b:inputSecret label="Password" id="j_password" autocomplete="off" value="#{logInController.password}"/>
+            <b:commandButton value="Login" type="submit" look="success" action="#{logInController.login()}"/>
+        </b:form>
+    </ui:define>
+
+
+</ui:composition>

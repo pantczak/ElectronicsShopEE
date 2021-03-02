@@ -7,6 +7,21 @@
     <navigation-rule>
         <from-view-id/>
         <navigation-case>
+            <from-outcome>userdata</from-outcome>
+            <to-view-id>/jsf/userdata.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>autherr</from-outcome>
+            <to-view-id>/auth/auth_err.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>authuser</from-outcome>
+            <to-view-id>/auth/auth.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>addevent</from-outcome>
             <to-view-id>/jsf/addevent.xhtml</to-view-id>
             <redirect/>
