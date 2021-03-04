@@ -19,7 +19,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Named
-@SessionScoped
+@ViewScoped
 public class UserDetailsController implements Serializable {
     @Inject
     HttpServletRequest request;
