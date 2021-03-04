@@ -8,7 +8,7 @@
         <from-view-id/>
         <navigation-case>
             <from-outcome>userdata</from-outcome>
-            <to-view-id>/jsf/userdata.xhtml</to-view-id>
+            <to-view-id>/main/client/userdata.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
@@ -23,82 +23,82 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>addevent</from-outcome>
-            <to-view-id>/jsf/addevent.xhtml</to-view-id>
+            <to-view-id>/main/employee/addevent.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>events</from-outcome>
-            <to-view-id>/jsf/events.xhtml</to-view-id>
+            <to-view-id>/main/employee/events.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>addlaptop</from-outcome>
-            <to-view-id>/jsf/addlaptop.xhtml</to-view-id>
+            <to-view-id>/main/employee/addlaptop.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>addsmartphone</from-outcome>
-            <to-view-id>/jsf/addsmartphone.xhtml</to-view-id>
+            <to-view-id>/main/employee/addsmartphone.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>smartphone</from-outcome>
-            <to-view-id>/jsf/smartphone.xhtml</to-view-id>
+            <to-view-id>/main/employee/smartphone.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>laptop</from-outcome>
-            <to-view-id>/jsf/laptop.xhtml</to-view-id>
+            <to-view-id>/main/employee/laptop.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>laptops</from-outcome>
-            <to-view-id>/jsf/laptops.xhtml</to-view-id>
+            <to-view-id>/main/employee/laptops.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>smartphones</from-outcome>
-            <to-view-id>/jsf/smartphones.xhtml</to-view-id>
+            <to-view-id>/main/employee/smartphones.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>addclient</from-outcome>
-            <to-view-id>/jsf/addclient.xhtml</to-view-id>
+            <to-view-id>/main/admin/addclient.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>addemployee</from-outcome>
-            <to-view-id>/jsf/addemployee.xhtml</to-view-id>
+            <to-view-id>/main/admin/addemployee.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>addadmin</from-outcome>
-            <to-view-id>/jsf/addadmin.xhtml</to-view-id>
+            <to-view-id>/main/admin/addadmin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>clients</from-outcome>
-            <to-view-id>/jsf/clients.xhtml</to-view-id>
+            <to-view-id>/main/employee/clients.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>client</from-outcome>
-            <to-view-id>/jsf/client.xhtml</to-view-id>
+            <to-view-id>/main/employee/client.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>admins</from-outcome>
-            <to-view-id>/jsf/admins.xhtml</to-view-id>
+            <to-view-id>/main/admin/admins.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>employees</from-outcome>
-            <to-view-id>/jsf/employees.xhtml</to-view-id>
+            <to-view-id>/main/admin/employees.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>main</from-outcome>
-            <to-view-id>/jsf/index.xhtml</to-view-id>
+            <to-view-id>/main/index.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>

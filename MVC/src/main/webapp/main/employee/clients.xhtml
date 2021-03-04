@@ -1,4 +1,4 @@
-<ui:composition template="template.xhtml"
+<ui:composition template="../template.xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
@@ -8,13 +8,14 @@
 
     <ui:define name="view">
         <h:form style="padding: 15px; margin-top: 60px ">
-            <b:dataTable value="#{usersController.userService.allAdmins}"
+            <b:dataTable value="#{usersController.userService.allClients}"
                          var="user">
                 <b:dataTableColumn value="#{user.uuid}"/>
                 <b:dataTableColumn value="#{user.name}"/>
                 <b:dataTableColumn value="#{user.lastName}"/>
                 <b:dataTableColumn value="#{user.login}"/>
                 <b:dataTableColumn value="#{user.password}"/>
+                <b:dataTableColumn value="#{user.age}"/>
                 <b:dataTableColumn value="#{user.active}"/>
                 <b:dataTableColumn label="Change User status">
                     <b:commandButton value="Change active status" look="warning" action="#{usersController.changeActiveStatus(user)}"/>
