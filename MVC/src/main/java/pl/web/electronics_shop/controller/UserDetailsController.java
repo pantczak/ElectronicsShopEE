@@ -7,6 +7,7 @@ import pl.web.electronics_shop.service.EventService;
 import pl.web.electronics_shop.service.UserService;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
@@ -18,7 +19,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Named
-@ViewScoped
+@SessionScoped
 public class UserDetailsController implements Serializable {
     @Inject
     HttpServletRequest request;

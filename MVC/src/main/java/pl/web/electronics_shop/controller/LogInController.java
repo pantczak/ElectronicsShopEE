@@ -31,7 +31,7 @@ public class LogInController implements Serializable {
                 (HttpServletRequest) context.getExternalContext().getRequest();
         try {
             httpServletRequest.login(username, password);
-            return "autherr";
+            return "main";
         } catch (ServletException e) {
             context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "login_failed", null));
             return null;

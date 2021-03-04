@@ -9,11 +9,11 @@
     <ui:define name="view">
         <b:form style="margin-top: 80px; padding: 20px">
 
-            <b:dataTable>
-                <b:dataTableColumn value="#{userDetailsController.login}"/>
-                <b:dataTableColumn value="#{userDetailsController.userForDetails.name}"/>
-                <b:dataTableColumn value="#{userDetailsController.userForDetails.lastName}"/>
-                <b:dataTableColumn value="#{userDetailsController.userForDetails.active}"/>
+            <b:dataTable value="#{userDetailsController.userForDetails}" var="usr">
+                <b:dataTableColumn value="#{usr.login}"/>
+                <b:dataTableColumn value="#{usr.name}"/>
+                <b:dataTableColumn value="#{usr.lastName}"/>
+                <b:dataTableColumn value="#{usr.active}"/>
             </b:dataTable>
 
             <b:dataTable value="#{userDetailsController.userBorrows}" var="borrow">
