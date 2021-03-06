@@ -27,6 +27,7 @@ public class ResourceResource {
     public Response getAllDevices() {
         return Response.status(200).entity(resourceService.getAllResources()).build();
     }
+}
 
 //    @PUT
 //    @Path("/laptop")
